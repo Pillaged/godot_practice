@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhlywbgfyapqr"]
+
+[ext_resource type="Texture2D" uid="uid://b1am8hrdyfntn" path="res://Sprites/jumper.png" id="1_rx4x1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wjbxg"]
+radius = 44.4072
+
+[node name="dropper" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+texture = ExtResource("1_rx4x1")
+region_enabled = true
+region_rect = Rect2(272, 24, 96, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wjbxg")

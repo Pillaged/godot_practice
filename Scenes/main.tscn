@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://t80s7a2ll8jg"]
+
+[ext_resource type="PackedScene" uid="uid://crmjwufynr432" path="res://Scenes/diagonal_platform.tscn" id="1_21sia"]
+[ext_resource type="PackedScene" uid="uid://bhlywbgfyapqr" path="res://Scenes/dropper.tscn" id="2_10f7p"]
+[ext_resource type="PackedScene" uid="uid://gsj8ffa3bcaq" path="res://Scenes/platform.tscn" id="3_y172l"]
+[ext_resource type="PackedScene" uid="uid://g7upoprrunap" path="res://Scenes/player.tscn" id="4_1mpc7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ua0i3"]
+a = Vector2(-324, -689.5)
+b = Vector2(-319, 610.5)
+
+[node name="game" type="Node2D"]
+
+[node name="diagonal_platform" parent="." instance=ExtResource("1_21sia")]
+position = Vector2(44, 1111)
+
+[node name="dropper" parent="." instance=ExtResource("2_10f7p")]
+position = Vector2(569, 1168)
+
+[node name="platform" parent="." instance=ExtResource("3_y172l")]
+position = Vector2(304, 1250)
+
+[node name="Player" parent="." instance=ExtResource("4_1mpc7")]
+position = Vector2(301, 1167)
+
+[node name="platform2" parent="." instance=ExtResource("3_y172l")]
+position = Vector2(452, 1250)
+
+[node name="platform3" parent="." instance=ExtResource("3_y172l")]
+position = Vector2(153, 1250)
+
+[node name="border_walls" type="StaticBody2D" parent="."]
+position = Vector2(325, 696.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border_walls"]
+shape = SubResource("SegmentShape2D_ua0i3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="border_walls"]
+position = Vector2(325, 696.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border_walls/StaticBody2D"]
+position = Vector2(323, -701)
+shape = SubResource("SegmentShape2D_ua0i3")

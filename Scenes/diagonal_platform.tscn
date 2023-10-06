@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://crmjwufynr432"]
+
+[ext_resource type="Texture2D" uid="uid://b1am8hrdyfntn" path="res://Sprites/jumper.png" id="1_fe1ef"]
+
+[node name="diagonal_platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 2)
+texture = ExtResource("1_fe1ef")
+region_enabled = true
+region_rect = Rect2(128, 0, 72, 128)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-35, -68, 35, 65, -35, 65)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-34, -42, 22, 62, -35, 58)
